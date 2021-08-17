@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/log_fragment">
+
+    <fragment
+        android:id="@+id/log_fragment"
+        android:name="archelon.login.activity.LogFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/login_to_menu"
+            app:destination="@id/home_fragment"
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="archelon.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_fragment_to_morningSurveyStartFragment"
+            app:destination="@id/morningSurveyStartFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_log_fragment"
+            app:destination="@id/log_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/morningSurveyStartFragment"
+        android:name="archelon.morningSurvey.MorningSurveyStartFragment"
+        android:label="MorningSurveyStartFragment"
+        tools:layout="@layout/fragment_morning_survey">
+        <action
+            android:id="@+id/action_morningSurveyStartFragment_to_observers_weather"
+            app:destination="@id/observers_weather" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/observers_weather"
+        android:name="archelon.observersWeather.ObserverWeatherFragment"
+        android:label="ObserverWeatherFragment"
+        tools:layout="@layout/fragment_observers_weather">
+        <action
+            android:id="@+id/action_observers_weather_to_morningSurveyStartFragment"
+            app:destination="@id/morningSurveyStartFragment" />
+        <action
+            android:id="@+id/action_observers_weather_to_home_fragment"
+            app:destination="@id/home_fragment" />
+        <action
+            android:id="@+id/action_observers_weather_to_morningSurveySubMenuFragment"
+            app:destination="@id/morningSurveySubMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/morningSurveySubMenuFragment"
+        android:name="archelon.morningSurvey.subMenu.MorningSurverySubMenuFragment"
+        android:label="MorningSurverySubMenuFragment"
+        tools:layout="@layout/fragment_morning_survey_sub_menu">
+        <action
+            android:id="@+id/action_morningSurveySubMenuFragment_to_home_fragment"
+            app:destination="@id/home_fragment" />
+        <action
+            android:id="@+id/action_morningSurveySubMenuFragment_to_observers_weather"
+            app:destination="@id/observers_weather" />
+        <action
+            android:id="@+id/action_morningSurveySubMenuFragment_to_choose_event"
+            app:destination="@id/choose_event" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/choose_event"
+        android:name="archelon.morningSurvey.chooseEvent.ChooseEventFragment"
+        android:label="ChooseEventFragment"
+        tools:layout="@layout/fragment_morning_survey_choose_event">
+
+        <action
+            android:id="@+id/action_choose_event_to_adultEmergence"
+            app:destination="@id/adultEmergence" />
+        <action
+            android:id="@+id/action_choose_event_to_hatchingOne"
+            app:destination="@id/hatchingOne" />
+        <action
+            android:id="@+id/action_choose_event_to_washFragment"
+            app:destination="@id/washFragment" />
+        <action
+            android:id="@+id/action_choose_event_to_home_fragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/adultEmergence"
+        android:name="archelon.adultEmergence.AdultEmergenceFragment"
+        android:label="ChooseEventFragment"
+        tools:layout="@layout/fragment_adult_emergence">
+
+        <action
+            android:id="@+id/action_adultEmergence_to_adultEmergenceOne"
+            app:destination="@id/adultEmergenceOne" />
+        <action
+            android:id="@+id/action_adultEmergence_to_morningSurveySubMenuFragment"
+            app:destination="@id/morningSurveySubMenuFragment" />
+        <action
+            android:id="@+id/action_adultEmergence_to_adultEmergenceNAFragment"
+            app:destination="@id/adultEmergenceNAFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adultEmergenceOne"
+        android:name="archelon.adultEmergence.nest.one.AdultEmergenceSubOneFragment"
+        android:label="AdultSubOne"
+        tools:layout="@layout/fragment_emergence_nest_one">
+
+        <action
+            android:id="@+id/action_adultEmergenceOne_to_adultEmergence"
+            app:destination="@id/adultEmergence" />
+        <action
+            android:id="@+id/action_adultEmergenceOne_to_morningSurveySubMenuFragment"
+            app:destination="@id/morningSurveySubMenuFragment" />
+        <action
+            android:id="@+id/action_adultEmergenceOne_to_adultEmergenceSubTwoFragment"
+            app:destination="@id/adultEmergenceSubTwoFragment" />
+        <action
+            android:id="@+id/action_adultEmergenceOne_to_relocationStartFragment"
+            app:destination="@id/relocationStartFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hatchingOne"
+        android:name="archelon.hatching.hatchOne.HatchingOneFragment"
+        android:label="HatchOne"
+        tools:layout="@layout/fragment_hatching_one">
+        <action
+            android:id="@+id/action_hatchingOne_to_hatchingTwo"
+            app:destination="@id/hatchingTwo" />
+        <action
+            android:id="@+id/action_hatchingOne_to_morningSurveySubMenuFragment"
+            app:destination="@id/morningSurveySubMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hatchingTwo"
+        android:name="archelon.hatching.hatchTwo.HatchingTwoFragment"
+        android:label="HatchTwo"
+        tools:layout="@layout/fragment_hatching_two">
+        <action
+            android:id="@+id/action_hatchingTwo_to_hatchingOne"
+            app:destination="@id/hatchingOne" />
+        <action
+            android:id="@+id/action_hatchingTwo_to_morningSurveySubMenuFragment"
+            app:destination="@id/morningSurveySubMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/washFragment"
+        android:name="archelon.wash.WashFragment"
+        android:label="WashFragment"
+        tools:layout="@layout/fragment_inundation_wash"
+        >
+        <action
+            android:id="@+id/action_washFragment_to_choose_event"
+            app:destination="@id/choose_event" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adultEmergenceNAFragment"
+        android:name="archelon.adultEmergence.normal.AdultEmergenceNAFragment"
+        android:label="AdultEmergenceNAFragment"
+        tools:layout="@layout/fragment_adult_emergence_normal">
+        <action
+            android:id="@+id/action_adultEmergenceNAFragment_to_morningSurveySubMenuFragment"
+            app:destination="@id/morningSurveySubMenuFragment" />
+        <action
+            android:id="@+id/action_adultEmergenceNAFragment_to_adultEmergence"
+            app:destination="@id/adultEmergence" />
+    </fragment>
+    <fragment
+        android:id="@+id/adultEmergenceSubTwoFragment"
+        android:name="archelon.adultEmergence.nest.two.AdultEmergenceSubTwoFragment"
+        android:label="AdultEmergenceSubTwoFragment"
+        tools:layout="@layout/fragment_emergence_nest_two">
+        <action
+            android:id="@+id/action_adultEmergenceSubTwoFragment_to_morningSurveySubMenuFragment"
+            app:destination="@id/morningSurveySubMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/relocationStartFragment"
+        android:name="archelon.adultEmergence.nest.relocation.start.RelocationStartFragment"
+        android:label="RelocationStartFragment"
+        tools:layout="@layout/fragment_relocation_start"/>
+
+
+</navigation>

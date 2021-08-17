@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="archelon.hatching.hatchOne.HatchOneViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="193dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Hatching"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{viewModel.timestamp.toString()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupFirstHatch"
+            android:layout_width="234dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23">
+
+            <RadioButton
+                android:id="@+id/firstHatchYes"
+                style="@style/RadioWithTextOnTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="@{viewModel.isFirstHatch}"
+                android:onClick="@{() -> viewModel.updateFirstHatch(true)}"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/firstHatchNo"
+                style="@style/RadioWithTextOnTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="@{!viewModel.isFirstHatch}"
+                android:onClick="@{() -> viewModel.updateFirstHatch(false)}"
+                android:text="@string/no" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="138dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="First Hatch"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/radioGroupFirstHatch"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="142dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Hatch Code"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
+            />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="229dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@{viewModel.hatchCode}"
+            android:onTextChanged="@{viewModel::onHatchCodeChange}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupFirstHatch"
+            />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="143dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Next Stones\nFound?"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupStoneNest"
+            android:layout_width="223dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView26"
+            app:layout_constraintTop_toBottomOf="@+id/editText5">
+
+            <RadioButton
+                android:id="@+id/stoneNestYes"
+                style="@style/RadioWithTextOnTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:checked="@{viewModel.hasStonesNestToNest}"
+                android:onClick="@{() -> viewModel.updateNestToStone(true)}"/>
+
+            <RadioButton
+                android:id="@+id/stoneNestNo"
+                style="@style/RadioWithTextOnTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"
+                android:checked="@{!viewModel.hasStonesNestToNest}"
+                android:onClick="@{() -> viewModel.updateNestToStone(false)}"/>
+
+
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spinner5"
+            android:layout_width="300dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26"
+            android:entries="@{viewModel.entriesNestCodes}"
+            android:gravity="center"
+            android:onItemSelected="@{(parent,view,pos,id)->viewModel.updateNestCode(pos)}"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupBM"
+            android:layout_width="305dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner5">
+
+            <RadioButton
+                android:id="@+id/BM_LBM"
+                style="@style/RadioWithTextBelow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="@{viewModel.hasLBM}"
+                android:onClick="@{() -> viewModel.updateBM(true, false)}"/>
+
+            <RadioButton
+                android:id="@+id/BM_RMB"
+                style="@style/RadioWithTextBelow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="@{viewModel.hasRBM}"
+                android:onClick="@{() -> viewModel.updateBM(false, true)}"/>
+
+            <RadioButton
+                android:id="@+id/BM_3BM"
+                style="@style/RadioWithTextBelow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="@{viewModel.has3BM}"
+                android:onClick="@{() -> viewModel.updateBM(false, false)}"/>
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="LBM"
+            app:layout_constraintEnd_toStartOf="@+id/textView28"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupBM" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RBM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupBM"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="3rd BM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.441"
+            app:layout_constraintStart_toEndOf="@+id/textView28"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupBM" />
+
+            <EditText
+                android:id="@+id/editText11"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="number"
+                android:onTextChanged="@{viewModel::onDistanceToSeaChange}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+            <EditText
+                android:id="@+id/editText12"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="number"
+                android:onTextChanged="@{viewModel::onDistanceToLBMChange}"
+                app:layout_constraintStart_toEndOf="@+id/editText11"
+                app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+            <EditText
+                android:id="@+id/editText13"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="28dp"
+                android:ems="10"
+                android:inputType="number"
+                android:onTextChanged="@{viewModel::onDistanceToRBMChange}"
+                app:layout_constraintEnd_toStartOf="@+id/editText14"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+            <EditText
+                android:id="@+id/editText14"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="number"
+                android:onTextChanged="@{viewModel::onDistanceTo3BMChange}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/distance_to_sea"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewHatchingCamera" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center"
+                android:text="@string/distance_to_3rd_bm"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewHatchingCamera" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                android:text="@string/distance_to_rbm"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView53"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewHatchingCamera" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="36dp"
+                android:gravity="center"
+                android:text="@string/distance_to_lbm"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@+id/textView52"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewHatchingCamera" />
+
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/metrics"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText11" />
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:text="@string/metrics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText14" />
+
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="46dp"
+            android:text="@string/metrics"
+            app:layout_constraintEnd_toStartOf="@+id/textView57"
+            app:layout_constraintTop_toBottomOf="@+id/editText13" />
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="54dp"
+            android:text="@string/metrics"
+            app:layout_constraintStart_toEndOf="@+id/textView56"
+            app:layout_constraintTop_toBottomOf="@+id/editText12" />
+
+        <RelativeLayout
+            android:layout_width="358dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView58">
+
+            <Button
+                android:id="@+id/hatchingOne_cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/cancel_entry_button" />
+
+            <Button
+                android:id="@+id/hatchingOne_next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/next_button"
+                android:onClick="@{viewModel::submitToDBThenNextUI}"/>
+        </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageViewHatchingCamera"
+                android:layout_width="92dp"
+                android:layout_height="94dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView60"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/current_version_limitation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="96dp"
+                android:text="@{viewModel.photoID}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView60" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

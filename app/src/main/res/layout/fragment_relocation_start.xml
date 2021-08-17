@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="archelon.adultEmergence.nest.relocation.start.RelocationStartViewModel" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="303dp"
+                android:layout_height="89dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/rounded_button_blue_two"
+                android:text="Start Relocation"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Time Counter"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Eggs Found"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.588"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView66" />
+
+            <Button
+                android:id="@+id/button27"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/ic_add_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView67" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="68dp"
+                android:background="@drawable/ic_add_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView72" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="264dp"
+                android:layout_height="131dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView67"
+                android:background="@drawable/back"/>
+
+            <EditText
+                android:id="@+id/editText16"
+                android:layout_width="264dp"
+                android:layout_height="131dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView72"
+                android:background="@drawable/back"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="48dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="56dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button27"
+                app:srcCompat="@drawable/ic_plane" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="48dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="56dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button10"
+                app:srcCompat="@drawable/ic_plane" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="263dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText2"
+                android:background="@drawable/back"/>
+
+            <EditText
+                android:id="@+id/editText17"
+                android:layout_width="263dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText16"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:id="@+id/textView68"
+                android:layout_width="126dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="36dp"
+                android:text="Original distance to\nbottom of E.C. (H)"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="143dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="28dp"
+                android:text="Relocated distance to\nbottom of E.C. (H)"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView68" />
+
+            <EditText
+                android:id="@+id/editText7"
+                android:layout_width="116dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="64dp"
+                android:ems="10"
+                android:inputType="number"
+                android:onTextChanged="@{viewModel::onOriginalDistance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+            <EditText
+                android:id="@+id/editText15"
+                android:layout_width="116dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="64dp"
+                android:ems="10"
+                android:inputType="number"
+                android:onTextChanged="@{viewModel::onRelocationDistance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText7" />
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="40dp"
+                android:text="CM"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="40dp"
+                android:text="CM"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Eggs Transplanted"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView69" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="358dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText17">
+
+                <Button
+                    android:id="@+id/button_previous_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/previous_button" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_toStartOf="@+id/NA_submit_button"
+                    android:text="@string/cancel_survey_button" />
+
+                <Button
+                    android:id="@+id/NA_submit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/submit_button"
+                    />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

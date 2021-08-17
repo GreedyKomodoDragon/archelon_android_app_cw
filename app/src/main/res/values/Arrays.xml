@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerArea">
+        <item>Beach</item>
+        <item>Mavrovouni</item>
+        <item>Selinitsa</item>
+        <item>Vathi</item>
+        <item>Valtaki</item>
+    </string-array>
+
+    <string-array name="spinnerSector">
+        <item>Sector</item>
+        <item>East</item>
+        <item>West</item>
+    </string-array>
+
+    <string-array name="hatchlingFate">
+        <item>Hatchling Fate</item>
+        <item>Sea</item>
+        <item>Seagull</item>
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Fox</item>
+        <item>Lost</item>
+        <item>Dead</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="tracksTrajectory">
+        <item>Tracks Trajectory</item>
+        <item>Not disoriented</item>
+        <item>Disoriented East</item>
+        <item>Disoriented West</item>
+        <item>Disoriented North</item>
+        <item>Disoriented South</item>
+        <item>Irregular Trajectory</item>
+    </string-array>
+
+    <string-array name="skyTypes">
+        <item>Sky</item>
+        <item>Clear</item>
+        <item>Light Overcast</item>
+        <item>Heavy Overcast</item>
+        <item>Complete Overcast</item>
+    </string-array>
+
+
+    <string-array name="precipitationValues">
+        <item>Precipitation</item>
+        <item>None</item>
+        <item>Drizzle</item>
+        <item>Rain</item>
+        <item>Heavy Rain</item>
+        <item>Storm</item>
+    </string-array>
+
+    <string-array name="wIntensity">
+        <item>Wind Intensity</item>
+        <item>No Wind</item>
+        <item>Weak (Breeze)</item>
+        <item>Medium</item>
+        <item>Strong</item>
+        <item>Gale</item>
+    </string-array>
+
+    <string-array name="wDirection">
+        <item>Wind Direction</item>
+        <item>N</item>
+        <item>NE</item>
+        <item>E</item>
+        <item>SE</item>
+        <item>S</item>
+        <item>SW</item>
+        <item>W</item>
+        <item>NW</item>
+    </string-array>
+
+    <string-array name="surf">
+        <item>Surf</item>
+        <item>Calm</item>
+        <item>Light</item>
+        <item>Moderate</item>
+        <item>Rough</item>
+        <item>Swell</item>
+    </string-array>
+
+</resources>

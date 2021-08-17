@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="archelon.adultEmergence.nest.two.AdultEmergenceSubTwoViewModel" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupBM"
+                android:layout_width="305dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/BM_LBM"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="@{viewModel.hasLBM}"/>
+
+                <RadioButton
+                    android:id="@+id/BM_RMB"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="@{viewModel.hasRBM}"/>
+
+                <RadioButton
+                    android:id="@+id/BM_3BM"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="@{viewModel.has3BM}"/>
+
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/lbm"
+                app:layout_constraintEnd_toStartOf="@+id/textView28"
+                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupBM" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/rbm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupBM" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/third_bm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.441"
+                app:layout_constraintStart_toEndOf="@+id/textView28"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupBM" />
+
+            <ImageView
+                android:id="@+id/imageViewCameraNestTwo"
+                android:layout_width="92dp"
+                android:layout_height="94dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="15dp"
+                android:contentDescription="Camera Icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView60"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="322dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/current_version_limitation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="116dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView60"
+                android:text="@{viewModel.photoID}"/>
+
+
+            <EditText
+                android:id="@+id/editText11"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView52"
+                android:onTextChanged="@{viewModel::onDistanceToSeaChange}"/>
+
+            <EditText
+                android:id="@+id/editText12"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/editText11"
+                app:layout_constraintTop_toBottomOf="@+id/textView54"
+                android:onTextChanged="@{viewModel::onDistanceToLBMChange}"/>
+
+            <EditText
+                android:id="@+id/editText13"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="28dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toStartOf="@+id/editText14"
+                app:layout_constraintTop_toBottomOf="@+id/textView55"
+                android:onTextChanged="@{viewModel::onDistanceToRBMChange}"/>
+
+            <EditText
+                android:id="@+id/editText14"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView53"
+                android:onTextChanged="@{viewModel::onDistanceTo3BMChange}"/>
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/distance_to_sea"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCameraNestTwo" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center"
+                android:text="@string/distance_to_3rd_bm"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCameraNestTwo" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                android:text="@string/distance_to_rbm"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView53"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCameraNestTwo" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="36dp"
+                android:gravity="center"
+                android:text="@string/distance_to_lbm"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView52"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCameraNestTwo" />
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:text="@string/metrics"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText11" />
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:text="@string/metrics"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText14" />
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="46dp"
+                android:text="@string/metrics"
+                app:layout_constraintEnd_toStartOf="@+id/textView57"
+                app:layout_constraintTop_toBottomOf="@+id/editText13" />
+
+            <TextView
+                android:id="@+id/textView58"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="54dp"
+                android:text="@string/metrics"
+                app:layout_constraintStart_toEndOf="@+id/textView56"
+                app:layout_constraintTop_toBottomOf="@+id/editText12" />
+
+            <Spinner
+                android:id="@+id/spinner9"
+                android:layout_width="301dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="45dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner9"
+                app:srcCompat="@drawable/ic_global" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="66dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:srcCompat="@drawable/ic_pin_blue" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="56dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                app:srcCompat="@drawable/blue_tag" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5"
+                app:srcCompat="@drawable/ic_plane" />
+
+            <EditText
+                android:id="@+id/textView34"
+                android:layout_width="221dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/spinner9"
+                android:text="@{viewModel.gpsLat.toString() + '\n' + viewModel.gpsLong.toString()}"/>
+
+            <EditText
+                android:id="@+id/textView35"
+                android:layout_width="225dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="44dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView34"
+                android:hint="@string/sector"
+                android:onTextChanged="@{viewModel::updateSector}"
+                />
+
+            <EditText
+                android:id="@+id/textView36"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView35"
+                android:hint="@string/nest_code"
+                android:onTextChanged="@{viewModel::updateTag}"
+                />
+
+            <EditText
+                android:id="@+id/textView37"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:hint="@string/any_comments_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView36"
+                android:onTextChanged="@{viewModel::updateComment}"
+                />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="358dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView37">
+
+                <Button
+                    android:id="@+id/button_previous_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/previous_button" />
+
+                <Button
+                    android:id="@+id/cancel_action_nest_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_toStartOf="@+id/NA_submit_button"
+                    android:text="@string/cancel_survey_button" />
+
+                <Button
+                    android:id="@+id/NA_submit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0dp"
+                    android:onClick="@{viewModel::onSubmitButtonClick}"
+                    android:text="@string/submit_button"
+                    />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

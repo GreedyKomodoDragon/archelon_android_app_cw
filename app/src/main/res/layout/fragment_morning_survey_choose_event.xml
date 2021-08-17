@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="6">
+
+            <Button
+                android:id="@+id/adultEmergenceButton"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Adult Emergence"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/hatching_choose_button"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Hatching"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adultEmergenceButton" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Found by Hatching"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hatching_choose_button" />
+
+            <Button
+                android:id="@+id/wash_inundation_button"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Inundation/Wash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button11" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Attempted/Predation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wash_inundation_button" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Found by Predation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button14" />
+
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Found By Other"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button15" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Vandalism"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button16" />
+
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_gray"
+                android:text="Other Event"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button17" />
+
+            <RelativeLayout
+                android:layout_width="358dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button18">
+
+                <Button
+                    android:id="@+id/sub_menu_previous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/previous_button" />
+
+                <Button
+                    android:id="@+id/sub_menu_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/cancel_survey_button" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="195dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:text="Inundation (I) or \nWash (W)"
+                android:textColor="@color/colorBlack"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="[TimeStamp]"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+            <Spinner
+                android:id="@+id/spinner7"
+                android:layout_width="305dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="32dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView40"
+                app:layout_constraintTop_toBottomOf="@+id/spinner7">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="111dp"
+                    android:layout_height="match_parent" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="109dp"
+                    android:layout_height="32dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="96dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:text="Event to nest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner7" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="103dp"
+                android:text="I"
+                app:layout_constraintEnd_toStartOf="@+id/textView42"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="87dp"
+                android:text="W"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="133dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="52dp"
+                android:gravity="center"
+                android:text="@string/distance_nest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+            <EditText
+                android:id="@+id/editText8"
+                android:layout_width="144dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="60dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="141dp"
+                android:layout_height="93dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:text="@string/wash_height_sand"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+            <EditText
+                android:id="@+id/editText9"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="56dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText8" />
+
+            <ImageView
+                android:id="@+id/camera_icon_wash"
+                android:layout_width="134dp"
+                android:layout_height="111dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="40dp"
+                android:contentDescription="Camera Icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView44"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="92dp"
+                android:text="Photo Record"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.338"
+                app:layout_constraintStart_toEndOf="@+id/camera_icon_wash"
+                app:layout_constraintTop_toBottomOf="@+id/editText9" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="56dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/camera_icon_wash"
+                app:srcCompat="@drawable/ic_plane" />
+
+            <EditText
+                android:id="@+id/editText10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="48dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Comment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/camera_icon_wash" />
+
+            <RelativeLayout
+                android:layout_width="251dp"
+                android:layout_height="53dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Cancel Entry" />
+
+                <Button
+                    android:id="@+id/observer_next_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Submit" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

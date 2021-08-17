@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="archelon.observersWeather.ObserverViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Observers"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_large"
+            app:layout_constraintTop_toTopOf="@+id/textView3"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                style="@style/LoginLabelStyle"
+                android:text="MS Leader" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ms_leader"
+                    style="@style/LoginEditTextStyle"
+                    android:onTextChanged="@{(s, start, end, count)-> viewModel.updateObserver(s, 1)}"
+                    android:text="@{viewModel.msLeader}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/LoginLabelStyle"
+                android:text="2nd Observer" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/observer_two"
+                    style="@style/LoginEditTextStyle"
+                    android:onTextChanged="@{(s, start, end, count)-> viewModel.updateObserver(s, 2)}"
+                    android:text="@{viewModel.obTwo}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/LoginLabelStyle"
+                android:text="3rd Observer" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/observer_three"
+                    style="@style/LoginEditTextStyle"
+                    android:onTextChanged="@{(s, start, end, count)-> viewModel.updateObserver(s, 3)}"
+                    android:text="@{viewModel.obThree}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/LoginLabelStyle"
+                android:text="4th Observer" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/observer_four"
+                    style="@style/LoginEditTextStyle"
+                    android:onTextChanged="@{(s, start, end, count)-> viewModel.updateObserver(s, 4)}"
+                    android:text="@{viewModel.obFour}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="388dp"
+            android:text="Weather"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner5"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:entries="@array/surf"
+            android:onItemSelected="@{(parent,view,pos,id)->viewModel.updateSpinner(pos, 5)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner"
+            />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:entries="@array/wDirection"
+            android:onItemSelected="@{(parent,view,pos,id)->viewModel.updateSpinner(pos, 4)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:entries="@array/precipitationValues"
+            android:onItemSelected="@{(parent,view,pos,id)->viewModel.updateSpinner(pos, 2)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner4" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:entries="@array/wIntensity"
+            android:onItemSelected="@{(parent,view,pos,id)->viewModel.updateSpinner(pos, 3)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:entries="@array/skyTypes"
+            android:onItemSelected="@{(parent,view,pos,id)->viewModel.updateSpinner(pos, 1)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView76"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="Some Fields are Missing"
+            android:textColor="@color/colorAccentRed"
+            android:textSize="24sp"
+            android:visibility="@{viewModel.error ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner5" />
+
+        <RelativeLayout
+            android:layout_width="358dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView76">
+
+            <Button
+                android:id="@+id/observer_previous_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/previous_button" />
+
+            <Button
+                android:id="@+id/observer_cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/cancel_survey_button" />
+
+            <Button
+                android:id="@+id/observer_next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/next_button"
+                android:onClick="@{viewModel::submitObserverFragmentToDB}"/>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

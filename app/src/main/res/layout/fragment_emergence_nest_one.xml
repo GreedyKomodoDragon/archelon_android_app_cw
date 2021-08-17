@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="nestOneViewModel"
+            type="archelon.adultEmergence.nest.one.AdultEmergenceSubOneViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
+                android:layout_width="73dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Cage \n(Wooden)" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{nestOneViewModel.isCageWooden}"
+                    android:onClick="@{() -> nestOneViewModel.updateCageWooden()}"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat2"
+                android:layout_width="62dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat"
+                app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Cage \n(Iron)" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{nestOneViewModel.isCageIron}"
+                    android:onClick="@{() -> nestOneViewModel.updateCageIron()}"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat3"
+                android:layout_width="62dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat2"
+                app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Bamboo\n Tripod" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{nestOneViewModel.hasBambooTripod}"
+                    android:onClick="@{() -> nestOneViewModel.updateHasBamboo()}"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat4"
+                android:layout_width="62dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat3"
+                app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="\nScreen" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{nestOneViewModel.hasScreen}"
+                    android:onClick="@{() -> nestOneViewModel.updateHasScreen()}"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat5"
+                android:layout_width="62dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat4"
+                app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Relo-\ncated" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{nestOneViewModel.hasBeenRelocated}"
+                    android:onClick="@{() -> nestOneViewModel.updateRelocated()}"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="62dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat5"
+                app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Alley-\nway" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{nestOneViewModel.hasAlleywayChecked}"
+                    android:onClick="@{() -> nestOneViewModel.updateAlleywayChecked()}"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <RadioGroup
+                android:id="@+id/radioGroupNest"
+                android:layout_width="157dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="135dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radioButtonYes"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="@{nestOneViewModel.isNestProtected}"
+                    android:onClick="@{()->nestOneViewModel.updateProtectedNest(true)}" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonNo"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="@{!nestOneViewModel.isNestProtected}"
+                    android:onClick="@{()->nestOneViewModel.updateProtectedNest(false)}" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="150dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="36dp"
+                android:text="Distance to top egg (cm)"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="154dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="44dp"
+                android:gravity="center"
+                android:text="Nest Protected?"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="158dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupNest">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Yes" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="No" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="194dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="36dp"
+                android:autofillHints="Measure distance top egg"
+                android:ems="10"
+                android:inputType="number"
+                android:onTextChanged="@{nestOneViewModel::updateDistanceEgg}"
+                android:text="@{nestOneViewModel.distanceToTopEggCM}"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="108dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="44dp"
+                android:gravity="center"
+                android:text="Other Protection"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="234dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="12dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3"
+                android:text="@{nestOneViewModel.protectionsComment}"
+                android:onTextChanged="@{nestOneViewModel::updateOtherProtections}"/>
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="60dp"
+                android:text="Nest tagged?"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="190dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="45dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintTop_toBottomOf="@+id/editText3">
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> nestOneViewModel.updateTagged(true)}"
+                    android:checked="@{nestOneViewModel.hasNestTagged}"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    style="@style/RadioWithTextBelow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> nestOneViewModel.updateTagged(false)}"
+                    android:checked="@{!nestOneViewModel.hasNestTagged}"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:text="@string/yes"
+                app:layout_constraintStart_toStartOf="@+id/radioGroup2"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:text="@string/no"
+                app:layout_constraintEnd_toEndOf="@+id/radioGroup2"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupType"
+                android:layout_width="291dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView18">
+
+                <RadioButton
+                    android:id="@+id/typeA"
+                    style="@style/RadioWithTextOnTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="A"
+                    android:onClick="@{() -> nestOneViewModel.updateTrackType('A')}"
+                    android:checked="@{nestOneViewModel.trackType == 'A'}"/>
+
+                <RadioButton
+                    android:id="@+id/typeB"
+                    style="@style/RadioWithTextOnTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="B"
+                    android:onClick="@{() -> nestOneViewModel.updateTrackType('B')}"
+                    android:checked="@{nestOneViewModel.trackType == 'B'}"/>
+
+                <RadioButton
+                    android:id="@+id/typeC"
+                    style="@style/RadioWithTextOnTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="C"
+                    android:onClick="@{() -> nestOneViewModel.updateTrackType('C')}"
+                    android:checked="@{nestOneViewModel.trackType == 'C'}"/>
+
+                <RadioButton
+                    android:id="@+id/typeD"
+                    style="@style/RadioWithTextOnTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="D"
+                    android:onClick="@{() -> nestOneViewModel.updateTrackType('D')}"
+                    android:checked="@{nestOneViewModel.trackType == 'D'}"/>
+
+                <RadioButton
+                    android:id="@+id/typeE"
+                    style="@style/RadioWithTextOnTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="E"
+                    android:onClick="@{() -> nestOneViewModel.updateTrackType('E')}"
+                    android:checked="@{nestOneViewModel.trackType == 'E'}"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="88dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="Track Type"
+                app:layout_constraintEnd_toStartOf="@+id/radioGroupType"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="112dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:text="Nest Code"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupType" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="358dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/previous_button" />
+
+                <Button
+                    android:id="@+id/cancel_action_nest_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_toStartOf="@+id/observer_next_button"
+                    android:text="@string/cancel_survey_button" />
+
+                <Button
+                    android:id="@+id/observer_next_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/next_button"
+                    android:onClick="@{nestOneViewModel::onNextButtonClicked}"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="147dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="100dp"
+                android:gravity="center"
+                android:text="@{nestOneViewModel.nestCode}"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupType" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
